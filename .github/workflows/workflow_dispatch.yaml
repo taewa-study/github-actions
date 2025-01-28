@@ -1,4 +1,4 @@
-name: workflow-dispatch
+name: workflow_dispatch
 on:
   workflow_dispatch:
     inputs:
@@ -17,18 +17,17 @@ on:
           - qa
           - prod
 
-
-  jobs:
-    workflow-dispatch-job:
-      runs-on: ubuntu-latest
-      steps:
-        - name: step1
-          run: echo "Hello, ${{ github.actor }}"
-        - name: step2
-          run: |
-            echo "Hello, ${{ github.actor }}"
-            echo "Hello, ${{ github.repository }}"
-        - name: echo inputs
-          run: |
-            echo "Hello, ${{ inputs.name }}"
-            echo "Hello, ${{ inputs.environment }}"
+    jobs:
+      workflow-dispatch-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: step1
+            run: echo "Hello, ${{ github.actor }}"
+          - name: step2
+            run: |
+              echo "Hello, ${{ github.actor }}"
+              echo "Hello, ${{ github.repository }}"
+          - name: echo inputs
+            run: |
+              echo "Hello, ${{ inputs.name }}"
+              echo "Hello, ${{ inputs.environment }}"
