@@ -7,3 +7,7 @@ jobs:
     steps:
       - name: step1
         run: echo "Hello, ${{ github.actor }}"
+      - name: step2
+        run: |
+          echo "Hello, ${{ github.actor }}"
+          echo "Hello, ${{ github.repository }}"
