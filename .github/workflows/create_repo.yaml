@@ -24,4 +24,4 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
       - name: create-repo
         run: |
-          gh repo create taewan-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
+          gh repo create taewa-study/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
