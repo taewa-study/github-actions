@@ -15,7 +15,7 @@ on:
         required: true
         default: 'github-actions'
         type: string
-jons:
+jobs:
   create-repo-automation:
     runs-on: ubuntu-latest
     steps:
