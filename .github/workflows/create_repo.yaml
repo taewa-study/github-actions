@@ -38,5 +38,4 @@ jobs:
               - type: "section"
                 text:
                   type: "mrkdwn"
-                  "title": "create repo result ${{ steps.create-repo.outcome }}",
-                  "text": "${{ inputs.prefix }}-${{ inputs.name }}"
+                  text: "create repo result ${{ steps.create-repo.outcome }} ${{ inputs.prefix }}-${{ inputs.name }}"
