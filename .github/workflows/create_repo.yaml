@@ -30,21 +30,13 @@ jobs:
         if: always()
         uses: slackapi/slack-github-action@v2.0.0
         with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
           payload: |
-            {
-              "attachments": [
-                {
-                  "pretext": "create repo result",
-                  "color": "28a745",
-                  "fields": [
-                    {
-                      "title": "create repo result ${{ steps.create-repo.outcome }}",
-                      "short": true,
-                      "value": "${{ inputs.prefix }}-${{ inputs.name }}"
-                    }
-                  ]
-                }
-              ]
-            }
-        env:
-         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            text: "Danny Torrence left a 1 star review for your property."
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  "title": "create repo result ${{ steps.create-repo.outcome }}",
+                  "text": "${{ inputs.prefix }}-${{ inputs.name }}"
