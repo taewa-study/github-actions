@@ -39,3 +39,7 @@ jobs:
                 text:
                   type: "mrkdwn"
                   text: "create repo result ${{ steps.create-repo.outcome }} ${{ inputs.prefix }}-${{ inputs.name }}"
+              - type: "section"
+                fields:
+                  - type: "mrkdwn"
+                  text: "*Average Rating*: 1.0"
